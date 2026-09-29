@@ -25,8 +25,8 @@ const privateContact = document.getElementById("privateContact");
 
 if (reveal && privateContact) {
   reveal.addEventListener("click", () => {
-    const email = ["karthimichel@gmail.com"].join("");
-    const phone = ["+91-9941875820"].join("");
+    const email = ["YOUR_EMAIL_HERE"].join("");
+    const phone = ["YOUR_PHONE_HERE"].join("");
 
     const emailLink = document.getElementById("emailLink");
     const phoneLink = document.getElementById("phoneLink");
@@ -58,7 +58,13 @@ if (status) {
   }, 4200);
 }
 
-const PROFILE_URLS={naukri:"https://www.naukri.com/mnjuser/profile?id=&altresid",naukrigulf:"https://www.naukrigulf.com/mnj/userProfile/myCV?source=gnbHeader",linkedin:"https://www.linkedin.com/in/karthikeyan-m-baa509b0"};
+const PROFILE_URLS={
+  linkedin:"https://www.linkedin.com/",
+  bayt:"https://www.bayt.com/",
+  gulftalent:"https://www.gulftalent.com/",
+  naukri:"https://www.naukri.com/",
+  naukrigulf:"https://www.naukrigulf.com/"
+};
 document.querySelectorAll("[data-profile]").forEach(a=>{const k=a.dataset.profile;if(PROFILE_URLS[k])a.href=PROFILE_URLS[k]});
 const progress=document.getElementById("scrollProgress"),backTop=document.getElementById("backTop");
 const scrollUI=()=>{const m=document.documentElement.scrollHeight-innerHeight;if(progress)progress.style.width=(m?(scrollY/m)*100:0)+"%";if(backTop)backTop.style.opacity=scrollY>500?"1":".45"};addEventListener("scroll",scrollUI,{passive:true});scrollUI();backTop?.addEventListener("click",()=>scrollTo({top:0,behavior:"smooth"}));
