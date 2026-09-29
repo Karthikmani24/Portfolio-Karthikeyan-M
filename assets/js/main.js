@@ -25,8 +25,8 @@ const privateContact = document.getElementById("privateContact");
 
 if (reveal && privateContact) {
   reveal.addEventListener("click", () => {
-    const email = ["YOUR_EMAIL_HERE"].join("");
-    const phone = ["YOUR_PHONE_HERE"].join("");
+    const email = ["karthimichel@gmail.com"].join("");
+    const phone = [+91-9941875820"].join("");
 
     const emailLink = document.getElementById("emailLink");
     const phoneLink = document.getElementById("phoneLink");
@@ -59,11 +59,11 @@ if (status) {
 }
 
 const PROFILE_URLS={
-  linkedin:"https://www.linkedin.com/",
-  bayt:"https://www.bayt.com/",
-  gulftalent:"https://www.gulftalent.com/",
-  naukri:"https://www.naukri.com/",
-  naukrigulf:"https://www.naukrigulf.com/"
+  linkedin:"https://www.linkedin.com/in/karthikeyan-m-baa509b0",
+  bayt:"https://www.bayt.com/en/jobseeker/my-account/?_gl=1*za9pd3*_up*MQ..*_ga*MTkxOTQwMTkzNS4xNzkwNjc2OTEz*_ga_1NKPLGNKKD*czE3OTA2NzY5MTMkbzEkZzAkdDE3OTA2NzY5MTMkajYwJGwwJGgw",
+  gulftalent:"https://www.gulftalent.com/candidates/edit-cv?isFromFreeCV=0",
+  naukri:"https://www.naukri.com/mnjuser/profile?id=&altresid",
+  naukrigulf:"https://www.naukrigulf.com/mnj/userProfile/myCV?source=gnbHeader"
 };
 document.querySelectorAll("[data-profile]").forEach(a=>{const k=a.dataset.profile;if(PROFILE_URLS[k])a.href=PROFILE_URLS[k]});
 const progress=document.getElementById("scrollProgress"),backTop=document.getElementById("backTop");
