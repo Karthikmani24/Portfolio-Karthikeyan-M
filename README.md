@@ -1,4 +1,4 @@
-# Karthikeyan M — Cybersecurity Portfolio V2
+# Karthikeyan M — Cybersecurity Portfolio
 
 A GitHub Pages-ready static portfolio with:
 
