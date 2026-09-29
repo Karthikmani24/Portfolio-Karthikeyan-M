@@ -107,3 +107,12 @@ if (careerHub) {
   }, {threshold:.2});
   hubObserver.observe(careerHub);
 }
+
+/* V5-2 ambient security field pointer parallax */
+if (matchMedia("(pointer:fine)").matches) {
+  const ambient = document.querySelector(".ambient-field");
+  if (ambient) window.addEventListener("pointermove", e => {
+    const x=(e.clientX/innerWidth-.5), y=(e.clientY/innerHeight-.5);
+    ambient.style.transform=`translate3d(${(x*10).toFixed(1)}px,${(y*7).toFixed(1)}px,0)`;
+  },{passive:true});
+}
