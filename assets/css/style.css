@@ -1,8 +1,32 @@
- :root{
-  --bg:#080c13;--bg-deep:#03060b;--panel:rgba(15,24,36,.76);--panel-2:rgba(25,34,49,.82);
-  --line:rgba(143,216,255,.16);--text:#f4f9ff;--muted:#a9bac9;
-  --accent:#8fd8ff;--accent-2:#5db7e8;--burgundy:#7f304f;--burgundy-2:#a44d70;
-  --good:#9df0b7;--shadow:0 25px 70px rgba(0,0,0,.42);--radius:22px
+:root{
+  /* ================================
+     KM EXECUTIVE NAVY + BURGUNDY
+     ================================ */
+
+  --bg:#08131D;
+  --bg-deep:#050A10;
+
+  --panel:rgba(18,31,42,.82);
+  --panel-2:rgba(27,39,49,.88);
+
+  --line:rgba(217,160,102,.18);
+
+  --text:#F4EFE9;
+  --muted:#C7C0B8;
+
+  /* Cyber Blue */
+  --accent:#5FA9D4;
+  --accent-2:#8AC8EA;
+
+  /* Burgundy */
+  --burgundy:#713247;
+  --burgundy-2:#A65C76;
+
+  /* Executive Copper */
+  --sand:#D9A066;
+  --sand-soft:#E0CDB9;
+
+  --good:#A8E7BD;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
