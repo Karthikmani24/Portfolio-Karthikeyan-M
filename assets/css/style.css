@@ -605,3 +605,206 @@ h1 span{color:var(--accent);text-shadow:0 0 40px rgba(95,169,212,.16)}
 @media(prefers-reduced-motion:reduce){
   .ambient-node,.ambient-orbit,.brand-mark:before,.brand-mark:after,.km-spark,.skill-card,.project-card,.cert-card,.cert-icon:before,.cert-orbit,.timeline-dot,.connect-panel:after{animation:none!important}
 }
+
+
+/* ============================================================
+   V7 — BURGUNDY COMMAND × CYBER SAND × AZURE ENTERPRISE
+        × RED TEAM × NAVY & COPPER
+   Final executive cybersecurity theme layer
+   ============================================================ */
+:root{
+  --bg:#08131D;
+  --bg-deep:#050A10;
+  --panel:rgba(14,28,40,.82);
+  --panel-2:rgba(24,39,52,.90);
+  --line:rgba(217,160,102,.20);
+  --text:#F5F1EC;
+  --muted:#C8C0B8;
+  --accent:#5FA9D4;
+  --accent-2:#8AC8EA;
+  --burgundy:#713247;
+  --burgundy-2:#A65C76;
+  --sand:#D9A066;
+  --sand-soft:#E0CDB9;
+  --red:#FF4D6D;
+  --red-deep:#8E203D;
+  --good:#A8E7BD;
+  --shadow:0 25px 70px rgba(0,0,0,.46);
+  --radius:22px;
+}
+
+body{
+  background:
+    radial-gradient(circle at 10% 12%,rgba(113,50,71,.34),transparent 25%),
+    radial-gradient(circle at 88% 14%,rgba(95,169,212,.18),transparent 25%),
+    radial-gradient(circle at 50% 82%,rgba(217,160,102,.09),transparent 28%),
+    radial-gradient(circle at 72% 62%,rgba(255,77,109,.045),transparent 22%),
+    linear-gradient(135deg,#050A10 0%,#08131D 52%,#111A22 100%);
+  overflow-x:hidden;
+}
+
+/* V7: no horizontal page scan line */
+.scan-line{display:none!important}
+
+.cyber-grid{
+  opacity:.34;
+  background:
+    linear-gradient(rgba(138,200,234,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(138,200,234,.035) 1px,transparent 1px);
+  background-size:56px 56px;
+}
+.cyber-grid:after{
+  background:
+    radial-gradient(circle at 12% 24%,rgba(113,50,71,.22),transparent 24%),
+    radial-gradient(circle at 84% 18%,rgba(95,169,212,.15),transparent 22%),
+    radial-gradient(circle at 56% 78%,rgba(217,160,102,.10),transparent 28%);
+}
+
+.site-header{
+  background:rgba(5,10,16,.78);
+  border-bottom-color:rgba(217,160,102,.13);
+}
+.nav-links a:hover,.nav-links a.active{background:rgba(217,160,102,.08);color:var(--text)}
+.brand-mark{
+  width:45px;height:45px;border-radius:14px;
+  background:linear-gradient(145deg,rgba(95,169,212,.17),rgba(113,50,71,.40));
+  border-color:rgba(95,169,212,.42);
+  box-shadow:inset 0 0 22px rgba(224,205,185,.07),0 8px 30px rgba(0,0,0,.28);
+}
+.brand-mark:before{border-color:rgba(217,160,102,.34);border-left-color:var(--sand);border-top-color:var(--accent)}
+.brand-mark:after{border-color:rgba(166,92,118,.20)}
+.km-logo{
+  background:linear-gradient(135deg,#E0CDB9 0%,#D9A066 44%,#8AC8EA 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  text-shadow:0 0 18px rgba(217,160,102,.16);
+}
+
+.hero-kicker,.section-heading small,.timeline small,.project-card span,.cert-card span{color:var(--accent)}
+h1 span{color:var(--accent-2);text-shadow:0 0 42px rgba(95,169,212,.16)}
+.hero-lead,.hero-meta,.glass p,.skill-card p,.timeline p,.project-card p{color:var(--muted)}
+.hero-meta i{color:var(--sand)}
+
+.primary{
+  background:linear-gradient(135deg,var(--sand),var(--burgundy-2) 72%,var(--burgundy));
+  color:#08131D;
+  box-shadow:0 14px 35px rgba(217,160,102,.16);
+}
+.primary:hover{box-shadow:0 16px 40px rgba(217,160,102,.26)}
+.secondary,.ghost{border-color:rgba(95,169,212,.22);background:rgba(255,255,255,.025)}
+.secondary:hover,.ghost:hover{border-color:rgba(217,160,102,.42)}
+
+.hero-console{
+  background:linear-gradient(145deg,rgba(113,50,71,.48),rgba(8,19,29,.92) 62%,rgba(18,59,82,.34));
+  border-color:rgba(217,160,102,.20);
+}
+.console-top{border-bottom-color:rgba(217,160,102,.16)}
+.console-top b{color:var(--sand)}
+.radar{border-color:rgba(95,169,212,.35);background:radial-gradient(circle,rgba(95,169,212,.09),transparent 62%)}
+.radar:before,.radar:after,.radar-ring{border-color:rgba(95,169,212,.16)}
+.radar-center{color:var(--sand)}
+.radar-sweep{background:linear-gradient(90deg,rgba(217,160,102,.75),transparent)}
+.console-lines p{border-bottom-color:rgba(217,160,102,.10);color:#D9D0C8}
+.console-lines p span{color:var(--accent)}
+
+.eyebrow{border-color:rgba(217,160,102,.18);background:rgba(255,255,255,.025)}
+.pulse-dot{background:var(--good)}
+.stats article,.timeline article,.telemetry,.signal-list>div{background:rgba(255,255,255,.025);border-color:rgba(217,160,102,.16)}
+.stats strong{color:var(--sand)}
+.skill-card,.project-card,.cert-card,.forum-card,.career-card,.glass,.contact-card,.forum-callout,.career-command{
+  background:linear-gradient(145deg,rgba(18,38,52,.88),rgba(44,18,31,.82) 58%,rgba(8,19,29,.92));
+  border-color:rgba(217,160,102,.18);
+}
+.skill-card:hover,.project-card:hover,.cert-card:hover,.forum-card:hover{border-color:rgba(217,160,102,.42);box-shadow:0 25px 65px rgba(0,0,0,.42),0 0 26px rgba(95,169,212,.05)}
+.skill-card i,.project-icon,.signal-list i{color:var(--accent)}
+.project-icon{background:linear-gradient(135deg,rgba(95,169,212,.11),rgba(113,50,71,.16));border-color:rgba(95,169,212,.22)}
+
+.bar i{background:linear-gradient(90deg,var(--burgundy-2),var(--sand),var(--accent))}
+.telemetry-head span,.telemetry-grid b{color:var(--sand)}
+
+.timeline-dot{background:var(--sand);box-shadow:0 0 18px rgba(217,160,102,.60)}
+.timeline article:nth-child(2) .timeline-dot{background:var(--burgundy-2)}
+.timeline article:nth-child(3) .timeline-dot{background:var(--accent)}
+
+.cert-icon{background:radial-gradient(circle,rgba(95,169,212,.12),rgba(113,50,71,.15) 55%,transparent 72%);border-color:rgba(217,160,102,.24)}
+.cert-icon:before{border-top-color:var(--accent);border-right-color:var(--sand)}
+.cert-orbit{background:var(--sand-soft);box-shadow:0 0 12px rgba(224,205,185,.8)}
+
+/* V7 ambient field */
+.ambient-field{z-index:0}
+.ambient-node{background:var(--accent);box-shadow:0 0 18px rgba(95,169,212,.60)}
+.ambient-node.n2,.ambient-node.n5{background:var(--burgundy-2);box-shadow:0 0 18px rgba(166,92,118,.58)}
+.ambient-node.n3,.ambient-node.n6{background:var(--sand);box-shadow:0 0 18px rgba(217,160,102,.58)}
+.ambient-node:after{border-color:rgba(95,169,212,.10)}
+.ambient-orbit{border-color:rgba(95,169,212,.11)}
+.ambient-orbit.o2{border-color:rgba(217,160,102,.12)}
+
+/* ============================================================
+   V7 FUN PROFESSIONAL ANIMATION — KM-GRC EXCEPTION HUNTER
+   A small security bot catches a risk bug, verifies a control,
+   then repeats. Purely visual; no operational monitoring claim.
+   ============================================================ */
+.fun-security-animation{
+  margin-top:20px;padding:13px 14px 12px;
+  border:1px solid rgba(217,160,102,.16);border-radius:16px;
+  background:linear-gradient(135deg,rgba(8,19,29,.70),rgba(113,50,71,.13));
+  overflow:hidden;position:relative;
+}
+.fun-label{display:flex;align-items:center;gap:7px;font-size:7px;font-weight:900;letter-spacing:.13em;color:var(--sand)}
+.fun-label i{color:var(--accent)}
+.fun-label span{margin-left:auto;color:var(--muted);font-size:6px;letter-spacing:.08em}
+.fun-track{height:66px;position:relative;margin-top:7px;border-bottom:1px dashed rgba(95,169,212,.18)}
+.fun-track:before{content:"";position:absolute;left:3%;right:3%;top:51%;height:1px;background:linear-gradient(90deg,transparent,var(--accent),var(--burgundy-2),var(--sand),transparent);opacity:.45}
+.fun-bot{position:absolute;left:4%;top:25px;width:30px;height:30px;border:1px solid rgba(95,169,212,.42);border-radius:10px;display:grid;place-items:center;background:rgba(8,19,29,.95);color:var(--accent);z-index:3;animation:grcBotChase 7s ease-in-out infinite}
+.fun-bot:after{content:"";position:absolute;width:5px;height:5px;border-radius:50%;background:var(--good);right:3px;top:3px;box-shadow:0 0 8px rgba(168,231,189,.9)}
+.fun-bot span{position:absolute;font-size:5px;font-weight:900;bottom:-9px;left:50%;transform:translateX(-50%);color:var(--sand);letter-spacing:.08em}
+.risk-bug{position:absolute;right:19%;top:25px;width:28px;height:28px;display:grid;place-items:center;color:var(--red);filter:drop-shadow(0 0 8px rgba(255,77,109,.42));animation:riskBugRun 7s ease-in-out infinite}
+.control-stamp{position:absolute;right:5%;top:17px;width:62px;height:43px;border:1px solid rgba(168,231,189,.40);border-radius:9px;display:flex;align-items:center;justify-content:center;gap:5px;color:var(--good);opacity:0;transform:scale(.6) rotate(-10deg);animation:controlVerified 7s ease-in-out infinite}
+.control-stamp i{font-size:11px}.control-stamp span{font-size:6px;font-weight:900;letter-spacing:.08em;line-height:1.15}
+.fun-caption{display:flex;align-items:center;gap:9px;margin-top:8px;font-size:7px;color:var(--muted)}
+.fun-meter{height:4px;flex:1;border-radius:99px;background:rgba(255,255,255,.07);overflow:hidden}.fun-meter i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--red),var(--sand),var(--good));animation:funMeter 7s linear infinite}
+.fun-message{font-size:7px;min-width:104px}.fun-message{color:var(--muted)}
+@keyframes grcBotChase{0%,8%{left:4%;transform:rotate(0deg)}38%{left:58%;transform:rotate(3deg)}48%{left:67%;transform:rotate(-3deg)}63%{left:78%;transform:rotate(0deg)}74%{left:79%;transform:scale(1.08)}100%{left:4%;transform:scale(1)}}
+@keyframes riskBugRun{0%,32%{right:19%;transform:translateX(0) rotate(0)}43%{right:30%;transform:translateX(0) rotate(-10deg)}55%{right:18%;transform:translateX(0) rotate(12deg)}67%{right:6%;transform:translateX(0) rotate(0);opacity:1}72%,100%{right:5%;opacity:.15;transform:scale(.5)}}
+@keyframes controlVerified{0%,63%{opacity:0;transform:scale(.6) rotate(-10deg)}68%{opacity:1;transform:scale(1.08) rotate(3deg)}75%,86%{opacity:1;transform:scale(1) rotate(0)}93%,100%{opacity:0;transform:scale(.8) rotate(8deg)}}
+@keyframes funMeter{0%{width:0}55%{width:68%}68%{width:100%}78%{width:0}100%{width:0}}
+
+/* V7 Career Hub */
+.career-command-v7{display:grid;grid-template-columns:1fr 1.05fr;gap:38px;align-items:center;padding:32px;border:1px solid rgba(217,160,102,.18);border-radius:28px;background:linear-gradient(145deg,rgba(18,38,52,.88),rgba(44,18,31,.82));box-shadow:var(--shadow);overflow:hidden;position:relative}
+.career-command-v7:after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 22%,rgba(95,169,212,.07) 44%,rgba(217,160,102,.07) 52%,transparent 68%);transform:translateX(-120%);animation:v7CareerSweep 8s ease-in-out infinite;pointer-events:none}
+@keyframes v7CareerSweep{55%,100%{transform:translateX(120%)}}
+.career-orbit-v7{width:330px;height:330px;margin:auto;position:relative;display:grid;place-items:center}
+.career-ring-v7{position:absolute;border:1px solid rgba(95,169,212,.18);border-radius:50%;inset:10px;animation:v7Orbit 20s linear infinite}.career-ring-v7.r2{inset:48px;border-style:dashed;border-color:rgba(217,160,102,.18);animation-duration:14s;animation-direction:reverse}.career-ring-v7.r3{inset:88px;border-color:rgba(166,92,118,.18);animation-duration:10s}
+@keyframes v7Orbit{to{transform:rotate(360deg)}}
+.career-core-v7{width:108px;height:108px;border-radius:50%;display:grid;place-items:center;align-content:center;background:radial-gradient(circle,rgba(95,169,212,.20),rgba(113,50,71,.72) 60%,rgba(8,19,29,.96));border:1px solid rgba(217,160,102,.58);box-shadow:0 0 60px rgba(217,160,102,.14),inset 0 0 28px rgba(95,169,212,.10);z-index:3;animation:v7CorePulse 3.4s ease-in-out infinite}
+.km-core{font-family:"Space Grotesk";font-size:26px;font-weight:900;background:linear-gradient(135deg,#E0CDB9,#D9A066,#8AC8EA);-webkit-background-clip:text;background-clip:text;color:transparent}.career-core-v7 small{font-size:6px;letter-spacing:.18em;color:var(--muted)}
+@keyframes v7CorePulse{50%{transform:scale(1.06);box-shadow:0 0 82px rgba(95,169,212,.22),inset 0 0 35px rgba(217,160,102,.10)}}
+.career-node-v7{position:absolute;width:64px;height:64px;border-radius:50%;display:grid;place-items:center;align-content:center;gap:1px;background:rgba(5,10,16,.94);border:1px solid rgba(95,169,212,.30);box-shadow:0 10px 30px rgba(0,0,0,.25);z-index:4;animation:v7NodeFloat 4s ease-in-out infinite}
+.career-node-v7 i{font-size:17px;color:var(--accent)}.career-node-v7 b{font-size:9px;color:var(--sand);font-family:"Space Grotesk"}.career-node-v7.c1{top:8px;left:133px}.career-node-v7.c2{right:15px;top:72px;animation-delay:.6s}.career-node-v7.c3{right:35px;bottom:25px;animation-delay:1.2s}.career-node-v7.c4{left:35px;bottom:25px;animation-delay:1.8s}.career-node-v7.c5{left:12px;top:76px;animation-delay:2.4s}
+@keyframes v7NodeFloat{50%{transform:translateY(-7px) scale(1.04)}}
+.career-copy-v7{position:relative;z-index:2}.career-chip-v7{display:inline-flex;align-items:center;gap:7px;padding:8px 11px;border:1px solid rgba(217,160,102,.20);border-radius:999px;color:var(--sand);font-size:8px;font-weight:900;letter-spacing:.10em;background:rgba(217,160,102,.05)}
+.career-copy-v7 h3{font-size:34px;margin:17px 0 10px}.career-copy-v7 p{color:var(--muted);max-width:620px}.career-metrics-v7{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}.career-metrics-v7 span{padding:9px 11px;border:1px solid rgba(95,169,212,.18);border-radius:12px;color:var(--muted);font-size:8px}.career-metrics-v7 b{color:var(--accent);margin-right:4px}.career-links-v7{display:flex;flex-wrap:wrap;gap:8px}.career-links-v7 .secondary{font-size:9px;padding:9px 11px}
+
+.scroll-progress{background:linear-gradient(90deg,var(--burgundy-2),var(--sand),var(--accent));box-shadow:0 0 18px rgba(217,160,102,.42)}
+.quick-actions button{background:rgba(5,10,16,.86);border-color:rgba(217,160,102,.20)}
+.cursor-glow{background:radial-gradient(circle,rgba(95,169,212,.14),rgba(113,50,71,.06),transparent 68%)}
+
+/* V7 light mode */
+body.light-mode{
+  --bg:#F4F0EA;--bg-deep:#E8EDF0;--panel:rgba(255,255,255,.82);--panel-2:rgba(245,242,238,.92);
+  --line:rgba(18,59,82,.14);--text:#18232C;--muted:#5B6972;--accent:#276FBF;--accent-2:#55B8E8;
+  --burgundy:#713247;--burgundy-2:#A65C76;--sand:#B87532;--sand-soft:#D9C1A4;
+}
+.light-mode .site-header{background:rgba(244,240,234,.82)}
+.light-mode .hero-console,.light-mode .glass,.light-mode .contact-card,.light-mode .career-command,.light-mode .career-command-v7,.light-mode .career-card,.light-mode .skill-card,.light-mode .project-card,.light-mode .cert-card,.light-mode .forum-card,.light-mode .forum-callout{background:rgba(255,255,255,.82)}
+.light-mode .career-node-v7{background:rgba(255,255,255,.92)}
+.light-mode .quick-actions button{background:rgba(255,255,255,.88)}
+
+@media(max-width:900px){
+  .career-command-v7{grid-template-columns:1fr}.career-orbit-v7{width:310px;height:310px}.fun-security-animation{max-width:100%}
+}
+@media(max-width:650px){
+  .career-orbit-v7{transform:scale(.82);margin:-18px auto}.career-command-v7{padding:18px}.career-copy-v7 h3{font-size:26px}.fun-label span{display:none}.fun-security-animation{margin-top:14px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.001ms!important}
+}
