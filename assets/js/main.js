@@ -25,8 +25,8 @@ const privateContact = document.getElementById("privateContact");
 
 if (reveal && privateContact) {
   reveal.addEventListener("click", () => {
-    const email = ["YOUR_EMAIL_HERE"].join("");
-    const phone = ["YOUR_PHONE_HERE"].join("");
+    const email = ["karthimichel@gmail.com"].join("");
+    const phone = ["+91-9941875820"].join("");
 
     const emailLink = document.getElementById("emailLink");
     const phoneLink = document.getElementById("phoneLink");
