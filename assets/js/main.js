@@ -25,8 +25,8 @@ const privateContact = document.getElementById("privateContact");
 
 if (reveal && privateContact) {
   reveal.addEventListener("click", () => {
-    const email = ["karthimichel@gmail.com"].join("");
-    const phone = ["+91-9941875820"].join("");
+    const email = ["YOUR_EMAIL_HERE"].join("");
+    const phone = ["YOUR_PHONE_HERE"].join("");
 
     const emailLink = document.getElementById("emailLink");
     const phoneLink = document.getElementById("phoneLink");
@@ -116,3 +116,31 @@ if (matchMedia("(pointer:fine)").matches) {
     ambient.style.transform=`translate3d(${(x*10).toFixed(1)}px,${(y*7).toFixed(1)}px,0)`;
   },{passive:true});
 }
+
+
+/* ============================================================
+   V7 interaction layer — professional/fun profile animation
+   ============================================================ */
+const funAnim = document.querySelector('.fun-security-animation');
+if (funAnim) {
+  const messages = [
+    'Exception detected…',
+    'KM bot chasing risk…',
+    'Control verified ✓',
+    'Back to monitoring…'
+  ];
+  let msgIndex = 0;
+  const msg = funAnim.querySelector('.fun-message');
+  if (msg) {
+    setInterval(() => {
+      msgIndex = (msgIndex + 1) % messages.length;
+      msg.textContent = messages[msgIndex];
+    }, 1750);
+  }
+}
+
+/* Small visual "audit stamp" interaction on capability/project cards. */
+document.querySelectorAll('.capability-card,.work-card').forEach(card => {
+  card.addEventListener('mouseenter', () => card.classList.add('v7-inspected'));
+  card.addEventListener('mouseleave', () => card.classList.remove('v7-inspected'));
+});
