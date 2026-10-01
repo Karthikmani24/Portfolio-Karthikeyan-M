@@ -1,1 +1,0 @@
-V7: Theme 2 + 7 + 8 + 10 + 11 hybrid. Added KM-GRC Exception Hunter animation, Career Hub section, V7 CSS/JS overrides, reduced-motion support, and cleaned duplicate quick-action markup.
