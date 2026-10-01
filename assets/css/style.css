@@ -1267,3 +1267,79 @@ body.dark-mode .learning-card:before{color:#8AC8EA;background:rgba(95,169,212,.0
   .flagship-project:before,.flagship-project:after,.flagship-project .impact-icon,.work-card:after,.work-card .project-icon,.capability-card:after,.resume-timeline:after,.career-orbit-v7:after,.contact-reveal-btn:after,.v82-glyph,.section.v82-section-visible .section-heading,.section.v82-section-visible .section-heading h2{animation:none!important}
 }
 .v82-audited{box-shadow:0 30px 75px rgba(39,111,191,.16),0 0 0 1px rgba(201,134,69,.22)!important}
+
+
+/* ============================================================
+   V8.3 — RECRUITER COMMAND TABS + PROJECT VISUAL LAB
+   ============================================================ */
+:root{
+  --bg:#DCE7EC;--bg-deep:#C7D6DE;
+  --panel:rgba(248,251,252,.88);--panel-2:rgba(239,245,248,.94);
+  --line:rgba(18,59,82,.17);--text:#172B38;--muted:#526572;
+  --accent:#276FBF;--accent-2:#55B8E8;--burgundy:#713247;--burgundy-2:#A65C76;
+  --sand:#C98645;--sand-soft:#E7D5BE;--red:#D9365B;--red-deep:#8E203D;
+}
+body:not(.dark-mode){
+  background:
+    radial-gradient(circle at 10% 10%,rgba(113,50,71,.15),transparent 25%),
+    radial-gradient(circle at 88% 12%,rgba(85,184,232,.17),transparent 28%),
+    radial-gradient(circle at 55% 88%,rgba(201,134,69,.12),transparent 30%),
+    linear-gradient(135deg,#C7D6DE 0%,#DCE7EC 48%,#EEF3F5 100%);
+}
+body:not(.dark-mode) .site-header{background:rgba(220,231,236,.86);border-bottom-color:rgba(18,59,82,.15)}
+body:not(.dark-mode) .nav-links.open{background:rgba(220,231,236,.97)}
+body:not(.dark-mode) .hero-console,
+body:not(.dark-mode) .glass,
+body:not(.dark-mode) .contact-card,
+body:not(.dark-mode) .skill-card,
+body:not(.dark-mode) .project-card,
+body:not(.dark-mode) .cert-card,
+body:not(.dark-mode) .career-command-v7,
+body:not(.dark-mode) .forum-callout{
+  background:linear-gradient(145deg,rgba(249,252,253,.94),rgba(226,235,240,.93));
+}
+.project-grid-rich{grid-template-columns:repeat(2,1fr);align-items:stretch}
+.project-rich-card{display:block;padding:0;overflow:hidden}
+.project-visual{position:relative;min-height:190px;display:grid;place-items:center;overflow:hidden;background:linear-gradient(135deg,rgba(39,111,191,.07),rgba(201,134,69,.07));border-bottom:1px solid rgba(18,59,82,.10)}
+.project-visual img{display:block;width:100%;max-width:100%;height:190px;object-fit:cover;transition:transform .6s cubic-bezier(.2,.75,.2,1);animation:projectFloat 5s ease-in-out infinite}
+.project-rich-card:hover .project-visual img{transform:scale(1.035)}
+.project-copy{padding:21px 22px 23px}
+.project-copy>span{color:var(--accent);font-size:8px;font-weight:900;letter-spacing:.15em}
+.project-copy h3{margin:7px 0 6px}
+.project-copy>p{color:var(--muted);font-size:12px;margin:0 0 10px}
+.project-scan{position:absolute;left:-25%;top:0;width:22%;height:100%;background:linear-gradient(90deg,transparent,rgba(85,184,232,.18),rgba(201,134,69,.12),transparent);transform:skewX(-18deg);animation:projectScan 5.4s ease-in-out infinite;pointer-events:none}
+.project-points{list-style:none;padding:0;margin:15px 0 0;display:grid;gap:9px}
+.project-points li{display:flex;gap:10px;padding:10px 11px;border-radius:13px;background:rgba(255,255,255,.42);border:1px solid rgba(18,59,82,.08);transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease}
+.project-points li:hover{transform:translateX(6px);border-color:rgba(39,111,191,.25);box-shadow:0 10px 28px rgba(39,111,191,.10)}
+.project-points li>i{color:var(--accent);margin-top:3px;width:15px}
+.project-points b{display:block;color:var(--text);font-size:10px;margin-bottom:2px}
+.project-points span{color:var(--muted);font-size:10px;line-height:1.5}
+.project-mini .project-visual,.project-mini .project-visual img{min-height:150px;height:150px}
+@keyframes projectFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes projectScan{0%,42%{left:-25%;opacity:0}52%{opacity:1}90%,100%{left:125%;opacity:0}}
+.recruiter-signal-line{display:flex;align-items:center;justify-content:center;gap:12px;margin:20px 0 14px;color:var(--accent);font-size:8px;font-weight:900;letter-spacing:.2em}
+.recruiter-signal-line span{width:55px;height:1px;background:linear-gradient(90deg,transparent,var(--accent));animation:signalLine 2.5s ease-in-out infinite}
+.recruiter-signal-line span:last-child{transform:rotate(180deg)}
+.recruiter-tabs{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:18px}
+.recruiter-tab{position:relative;display:flex;align-items:center;gap:9px;min-height:76px;padding:12px;border:1px solid rgba(18,59,82,.14);border-radius:17px;background:rgba(255,255,255,.62);color:var(--text);cursor:pointer;text-align:left;font:inherit;overflow:hidden;transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease}
+.recruiter-tab:before{content:"";position:absolute;left:-120%;top:0;width:80%;height:100%;background:linear-gradient(100deg,transparent,rgba(85,184,232,.20),transparent);transform:skewX(-18deg);transition:left .7s ease}
+.recruiter-tab:hover:before,.recruiter-tab.active:before{left:140%}
+.recruiter-tab:hover{transform:translateY(-5px);border-color:rgba(39,111,191,.35);box-shadow:0 16px 36px rgba(39,111,191,.12)}
+.recruiter-tab.active{transform:translateY(-4px);border-color:rgba(201,134,69,.55);box-shadow:0 16px 40px rgba(201,134,69,.14)}
+.recruiter-logo{width:40px;height:40px;min-width:40px;display:grid;place-items:center;border-radius:12px;color:#fff;font-weight:900;box-shadow:0 8px 20px rgba(18,59,82,.12);position:relative;z-index:1}
+.linkedin-logo{background:#0A66C2}.naukri-logo{background:#2F6FED}.bayt-logo{background:#713247}.gt-logo{background:#C98645}.ng-logo{background:#276FBF}
+.recruiter-tab b{display:block;font-size:11px;line-height:1.2;position:relative;z-index:1}
+.recruiter-tab small{display:block;margin-top:4px;color:var(--muted);font-size:7.5px;line-height:1.25;position:relative;z-index:1}
+.recruiter-preview{position:relative;margin-top:13px;padding:21px;border-radius:20px;background:linear-gradient(135deg,rgba(255,255,255,.84),rgba(231,239,243,.88));border:1px solid rgba(18,59,82,.13);box-shadow:0 20px 48px rgba(18,59,82,.10);overflow:hidden}
+.recruiter-preview:before{content:"";position:absolute;width:180px;height:180px;right:-55px;top:-75px;border-radius:50%;border:1px dashed rgba(201,134,69,.32);animation:recruiterOrbit 7s linear infinite}
+.recruiter-preview:after{content:"";position:absolute;width:8px;height:8px;right:34px;top:36px;border-radius:50%;background:var(--accent-2);box-shadow:0 0 16px rgba(85,184,232,.6);animation:recruiterPing 2.3s ease-in-out infinite}
+.preview-signal,.recruiter-preview h3,.recruiter-preview p,.recruiter-preview a{position:relative;z-index:1}
+.preview-signal{font-size:7px;font-weight:900;letter-spacing:.18em;color:var(--accent)}
+.recruiter-preview h3{margin:7px 0 4px}.recruiter-preview p{max-width:680px;color:var(--muted);font-size:11px;margin:0 0 13px}
+@keyframes recruiterOrbit{to{transform:rotate(360deg)}}
+@keyframes recruiterPing{50%{transform:scale(1.7);box-shadow:0 0 0 9px rgba(85,184,232,.06),0 0 22px rgba(85,184,232,.6)}}
+@keyframes signalLine{50%{width:90px;opacity:.55}}
+@media(max-width:1050px){.recruiter-tabs{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:900px){.project-grid-rich{grid-template-columns:1fr}}
+@media(max-width:600px){.recruiter-tabs{grid-template-columns:1fr}.recruiter-tab{min-height:68px}.project-visual,.project-visual img{height:165px;min-height:165px}}
+@media(prefers-reduced-motion:reduce){.project-visual img,.project-scan,.recruiter-signal-line span,.recruiter-preview:before,.recruiter-preview:after{animation:none!important}}
