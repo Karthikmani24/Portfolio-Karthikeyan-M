@@ -25,8 +25,8 @@ const privateContact = document.getElementById("privateContact");
 
 if (reveal && privateContact) {
   reveal.addEventListener("click", () => {
-    const email = ["karthimichel@gmail.com"].join("");
-    const phone = ["+91-9941875820"].join("");
+    const email = ["YOUR_EMAIL_HERE"].join("");
+    const phone = ["YOUR_PHONE_HERE"].join("");
 
     const emailLink = document.getElementById("emailLink");
     const phoneLink = document.getElementById("phoneLink");
@@ -59,11 +59,11 @@ if (status) {
 }
 
 const PROFILE_URLS={
-  linkedin:"https://www.linkedin.com/in/karthikeyan-m-baa509b0",
-  bayt:"https://www.bayt.com/en/jobseeker/my-account/?_gl=1*za9pd3*_up*MQ..*_ga*MTkxOTQwMTkzNS4xNzkwNjc2OTEz*_ga_1NKPLGNKKD*czE3OTA2NzY5MTMkbzEkZzAkdDE3OTA2NzY5MTMkajYwJGwwJGgw",
-  gulftalent:"https://www.gulftalent.com/candidates/edit-cv?isFromFreeCV=0",
-  naukri:"https://www.naukri.com/mnjuser/profile?id=&altresid",
-  naukrigulf:"https://www.naukrigulf.com/mnj/userProfile/myCV?source=gnbHeader"
+  linkedin:"https://www.linkedin.com/",
+  bayt:"https://www.bayt.com/",
+  gulftalent:"https://www.gulftalent.com/",
+  naukri:"https://www.naukri.com/",
+  naukrigulf:"https://www.naukrigulf.com/"
 };
 document.querySelectorAll("[data-profile]").forEach(a=>{const k=a.dataset.profile;if(PROFILE_URLS[k])a.href=PROFILE_URLS[k]});
 const progress=document.getElementById("scrollProgress"),backTop=document.getElementById("backTop");
@@ -71,7 +71,18 @@ const scrollUI=()=>{const m=document.documentElement.scrollHeight-innerHeight;if
 const observer=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("is-visible");observer.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll(".skill-card,.project-card,.cert-card,.career-card,.timeline article,.glass,.signal-list>div").forEach(e=>{e.classList.add("reveal-on-scroll");observer.observe(e)});
 const tel=document.querySelector(".telemetry");if(tel){const o=new IntersectionObserver(es=>{if(!es[0].isIntersecting)return;tel.querySelectorAll(".bar i").forEach(b=>b.style.width=getComputedStyle(b).getPropertyValue("--value"));tel.querySelectorAll("[data-counter]").forEach(c=>{const t=+c.dataset.counter;let v=0;const z=setInterval(()=>{v+=Math.ceil(t/30);if(v>=t){v=t;clearInterval(z)}c.textContent=v+"%"},30)});o.disconnect()},{threshold:.25});o.observe(tel)}
 const glow=document.getElementById("cursorGlow");if(glow&&matchMedia("(pointer:fine)").matches)addEventListener("pointermove",e=>{glow.style.opacity=".9";glow.style.left=e.clientX+"px";glow.style.top=e.clientY+"px"});
-const theme=document.getElementById("themeToggle");if(theme){if(localStorage.getItem("km-theme")==="light")document.body.classList.add("light-mode");const icon=()=>theme.innerHTML=document.body.classList.contains("light-mode")?'<i class="fa-solid fa-sun"></i>':'<i class="fa-solid fa-moon"></i>';icon();theme.addEventListener("click",()=>{document.body.classList.toggle("light-mode");localStorage.setItem("km-theme",document.body.classList.contains("light-mode")?"light":"dark");icon()})}
+const theme=document.getElementById("themeToggle");
+if(theme){
+  const saved=localStorage.getItem("km-theme");
+  if(saved==="dark")document.body.classList.add("dark-mode");
+  const icon=()=>theme.innerHTML=document.body.classList.contains("dark-mode")?'<i class="fa-solid fa-sun"></i>':'<i class="fa-solid fa-moon"></i>';
+  icon();
+  theme.addEventListener("click",()=>{
+    document.body.classList.toggle("dark-mode");
+    localStorage.setItem("km-theme",document.body.classList.contains("dark-mode")?"dark":"light");
+    icon();
+  });
+}
 
 
 /* V5 motion layer: subtle pointer tilt for capability/work/credential cards. */
@@ -144,3 +155,123 @@ document.querySelectorAll('.capability-card,.work-card').forEach(card => {
   card.addEventListener('mouseenter', () => card.classList.add('v7-inspected'));
   card.addEventListener('mouseleave', () => card.classList.remove('v7-inspected'));
 });
+
+
+/* ============================================================
+   V8 motion layer — extra profile animation
+   ============================================================ */
+const v8Status = document.querySelector("[data-security-status]");
+if(v8Status){
+  const v8States=[
+    "SOC STATUS: ONLINE",
+    "GRC STATUS: ACTIVE",
+    "RISK REGISTER: TRACKED",
+    "CONTROL ASSURANCE: READY",
+    "AUDIT MODE: ENGAGED",
+    "KM SECURITY CORE: ONLINE"
+  ];
+  let v8i=0;
+  setInterval(()=>{
+    v8i=(v8i+1)%v8States.length;
+    v8Status.animate([{opacity:.2,transform:"translateY(5px)"},{opacity:1,transform:"translateY(0)"}],{duration:380,easing:"ease-out"});
+    v8Status.textContent=v8States[v8i];
+  },3300);
+}
+
+/* Rotating professional headline phrases — visual only. */
+const heroTitle=document.querySelector("h1 span");
+if(heroTitle){
+  const phrases=["governed, monitored and resilient.","risk-aware and audit-ready.","built around strong controls.","ready for security leadership."];
+  let hi=0;
+  setInterval(()=>{
+    hi=(hi+1)%phrases.length;
+    heroTitle.animate([{opacity:.15,transform:"translateY(6px)"},{opacity:1,transform:"translateY(0)"}],{duration:520,easing:"ease-out"});
+    heroTitle.textContent=phrases[hi];
+  },4800);
+}
+
+/* Certification cards get a sequential spotlight sweep. */
+const certCards=[...document.querySelectorAll(".credential-card")];
+if(certCards.length){
+  let ci=0;
+  setInterval(()=>{
+    certCards.forEach(c=>c.classList.remove("v8-spotlight"));
+    certCards[ci%certCards.length].classList.add("v8-spotlight");
+    ci++;
+  },1900);
+}
+
+/* Gentle mouse depth for the light executive UI. */
+if(matchMedia("(pointer:fine)").matches){
+  const hero=document.querySelector(".hero");
+  if(hero){
+    hero.addEventListener("pointermove",e=>{
+      const r=hero.getBoundingClientRect();
+      const x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+      document.documentElement.style.setProperty("--v8-mx",`${(x*6).toFixed(2)}px`);
+      document.documentElement.style.setProperty("--v8-my",`${(y*5).toFixed(2)}px`);
+    },{passive:true});
+  }
+}
+
+/* Small KM greeting when the visitor reaches Career Hub. */
+const v8Career=document.getElementById("career");
+if(v8Career){
+  const v8CareerObserver=new IntersectionObserver(entries=>{
+    if(entries[0].isIntersecting){
+      v8Career.classList.add("v8-career-arrived");
+      v8CareerObserver.disconnect();
+    }
+  },{threshold:.25});
+  v8CareerObserver.observe(v8Career);
+}
+
+
+/* ============================================================
+   V8.1 RESUME-SYNC MOTION LAYER
+   ============================================================ */
+const v81Impact=document.querySelectorAll('.impact-card,.education-card');
+if(v81Impact.length && 'IntersectionObserver' in window){
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach((entry,index)=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('v81-visible');
+        entry.target.style.setProperty('--v81-delay', `${Math.min(index,5)*90}ms`);
+        io.unobserve(entry.target);
+      }
+    });
+  },{threshold:.14});
+  v81Impact.forEach(card=>io.observe(card));
+}
+
+/* Rotating role signals based on the resume's core profile. */
+const v81Kicker=document.querySelector('.hero-kicker');
+if(v81Kicker){
+  const roleSignals=[
+    'CYBERSECURITY • GRC • SECURITY OPERATIONS',
+    'INFORMATION SECURITY • RISK • COMPLIANCE',
+    'SIEM • INCIDENT RESPONSE • THREAT MANAGEMENT',
+    'ISO 27001 • PCI DSS • NPCI • GSMA'
+  ];
+  let ri=0;
+  setInterval(()=>{
+    ri=(ri+1)%roleSignals.length;
+    v81Kicker.animate([{opacity:.25,transform:'translateY(4px)'},{opacity:1,transform:'translateY(0)'}],{duration:420,easing:'ease-out'});
+    v81Kicker.textContent=roleSignals[ri];
+  },4200);
+}
+
+/* Tiny control-packet trail follows pointer on desktop — decorative only. */
+if(matchMedia('(pointer:fine)').matches){
+  let last=0;
+  document.addEventListener('pointermove',e=>{
+    const now=performance.now();
+    if(now-last<110) return;
+    last=now;
+    const dot=document.createElement('span');
+    dot.className='v81-pointer-packet';
+    dot.style.left=`${e.clientX}px`; dot.style.top=`${e.clientY}px`;
+    document.body.appendChild(dot);
+    setTimeout(()=>dot.remove(),850);
+  },{passive:true});
+}
