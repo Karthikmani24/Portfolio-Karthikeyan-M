@@ -319,3 +319,34 @@ document.querySelectorAll('.flagship-project,.impact-card,.work-card').forEach(c
   card.addEventListener('pointerenter',()=>card.classList.add('v82-audited'));
   card.addEventListener('pointerleave',()=>card.classList.remove('v82-audited'));
 });
+
+
+/* ============================================================
+   V8.3 — RECRUITER PROFILE COMMAND TABS
+   ============================================================ */
+const recruiterData = {
+  linkedin:{title:"LinkedIn",description:"Professional profile, cybersecurity experience, certifications and recruiter networking.",url:"https://www.linkedin.com/"},
+  naukri:{title:"Naukri",description:"India-focused profile for cybersecurity, GRC, compliance and information security opportunities.",url:"https://www.naukri.com/"},
+  bayt:{title:"Bayt",description:"Middle East career profile for information security, cybersecurity and GRC opportunities.",url:"https://www.bayt.com/"},
+  gulftalent:{title:"GulfTalent",description:"GCC-focused career presence for cybersecurity, GRC, compliance and security leadership opportunities.",url:"https://www.gulftalent.com/"},
+  naukrigulf:{title:"Naukri Gulf",description:"Gulf-focused career profile covering UAE, Saudi Arabia, Qatar, Oman, Bahrain and Kuwait opportunities.",url:"https://www.naukrigulf.com/"}
+};
+const recruiterTabs=document.querySelectorAll(".recruiter-tab");
+const recruiterTitle=document.getElementById("recruiterTitle");
+const recruiterDescription=document.getElementById("recruiterDescription");
+const recruiterOpen=document.getElementById("recruiterOpen");
+recruiterTabs.forEach(tab=>{
+  tab.addEventListener("click",()=>{
+    const data=recruiterData[tab.dataset.recruiter];
+    if(!data)return;
+    recruiterTabs.forEach(t=>{t.classList.remove("active");t.setAttribute("aria-selected","false")});
+    tab.classList.add("active");
+    tab.setAttribute("aria-selected","true");
+    if(recruiterTitle){
+      recruiterTitle.animate([{opacity:.15,transform:"translateY(8px)"},{opacity:1,transform:"translateY(0)"}],{duration:420,easing:"ease-out"});
+      recruiterTitle.textContent=data.title;
+    }
+    if(recruiterDescription)recruiterDescription.textContent=data.description;
+    if(recruiterOpen)recruiterOpen.href=data.url;
+  });
+});
