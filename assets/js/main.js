@@ -25,8 +25,11 @@ const privateContact = document.getElementById("privateContact");
 
 if (reveal && privateContact) {
   reveal.addEventListener("click", () => {
-    const email = ["YOUR_EMAIL_HERE"].join("");
-    const phone = ["YOUR_PHONE_HERE"].join("");
+    // Contact data is intentionally not rendered in the initial HTML.
+    // It is assembled only after the visitor clicks the reveal control.
+    const decode = value => atob(value);
+    const email = decode("a2FydGhpbWljaGVsQGdtYWlsLmNvbQ==");
+    const phone = decode("KzkxLTk5NDE4NzU4MjA=");
 
     const emailLink = document.getElementById("emailLink");
     const phoneLink = document.getElementById("phoneLink");
@@ -275,3 +278,44 @@ if(matchMedia('(pointer:fine)').matches){
     setTimeout(()=>dot.remove(),850);
   },{passive:true});
 }
+
+/* ============================================================
+   V8.2 — EXTRA PROFILE MOTION LAYER
+   ============================================================ */
+// Keep V7 wording/content; this layer only adds visual motion.
+const v82Sections=document.querySelectorAll('.section');
+if('IntersectionObserver' in window && v82Sections.length){
+  const v82Observer=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('v82-section-visible');
+        v82Observer.unobserve(entry.target);
+      }
+    });
+  },{threshold:.14});
+  v82Sections.forEach((section,index)=>{
+    section.style.setProperty('--v82-section-delay',`${Math.min(index,8)*70}ms`);
+    v82Observer.observe(section);
+  });
+}
+
+// Small professional security glyphs float in the background.
+const v82Glyphs=['<i class="fa-solid fa-shield-halved"></i>','<i class="fa-solid fa-scale-balanced"></i>','<i class="fa-solid fa-certificate"></i>'];
+if(!matchMedia('(prefers-reduced-motion:reduce)').matches){
+  const field=document.createElement('div');
+  field.className='v82-glyph-field';
+  field.setAttribute('aria-hidden','true');
+  v82Glyphs.forEach((glyph,i)=>{
+    const el=document.createElement('span');
+    el.className=`v82-glyph g${i+1}`;
+    el.innerHTML=glyph;
+    field.appendChild(el);
+  });
+  document.body.appendChild(field);
+}
+
+// Project cards briefly show an "audited" visual state on hover.
+document.querySelectorAll('.flagship-project,.impact-card,.work-card').forEach(card=>{
+  card.addEventListener('pointerenter',()=>card.classList.add('v82-audited'));
+  card.addEventListener('pointerleave',()=>card.classList.remove('v82-audited'));
+});
