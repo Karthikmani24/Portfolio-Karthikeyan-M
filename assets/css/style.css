@@ -808,3 +808,249 @@ body.light-mode{
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.001ms!important}
 }
+
+/* ============================================================
+   V8 — LIGHT EXECUTIVE CYBER THEME
+   Theme 8 Azure Enterprise + Theme 10 Red Team + Theme 11 Navy & Copper
+   Lighter background, premium corporate cards and richer motion.
+   ============================================================ */
+:root{
+  --bg:#EEF4F7;
+  --bg-deep:#DCE8EE;
+  --panel:rgba(255,255,255,.82);
+  --panel-2:rgba(247,242,236,.92);
+  --line:rgba(18,59,82,.14);
+  --text:#172B38;
+  --muted:#5B6C77;
+  --accent:#276FBF;
+  --accent-2:#55B8E8;
+  --burgundy:#713247;
+  --burgundy-2:#A65C76;
+  --sand:#C98645;
+  --sand-soft:#E7D5BE;
+  --red:#D9365B;
+  --red-deep:#8E203D;
+  --good:#16865C;
+  --shadow:0 22px 55px rgba(26,59,77,.13);
+  --radius:22px;
+}
+
+body:not(.dark-mode){
+  color:var(--text);
+  background:
+    radial-gradient(circle at 8% 10%,rgba(113,50,71,.13),transparent 25%),
+    radial-gradient(circle at 88% 10%,rgba(85,184,232,.19),transparent 27%),
+    radial-gradient(circle at 52% 72%,rgba(217,160,102,.13),transparent 30%),
+    linear-gradient(135deg,#F7F4EF 0%,#EEF4F7 46%,#E5EFF4 100%);
+}
+
+body:not(.dark-mode) .cyber-grid{
+  opacity:.42;
+  background:
+    linear-gradient(rgba(39,111,191,.055) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(39,111,191,.055) 1px,transparent 1px);
+  background-size:58px 58px;
+}
+body:not(.dark-mode) .cyber-grid:after{
+  background:
+    radial-gradient(circle at 12% 24%,rgba(113,50,71,.10),transparent 23%),
+    radial-gradient(circle at 84% 18%,rgba(85,184,232,.12),transparent 22%),
+    radial-gradient(circle at 56% 78%,rgba(217,160,102,.09),transparent 27%);
+}
+
+body:not(.dark-mode) .site-header{
+  background:rgba(247,244,239,.78);
+  border-bottom-color:rgba(18,59,82,.12);
+}
+body:not(.dark-mode) .nav-links a{color:#536774}
+body:not(.dark-mode) .nav-links a:hover,
+body:not(.dark-mode) .nav-links a.active{background:rgba(39,111,191,.08);color:var(--text)}
+
+body:not(.dark-mode) .brand-mark{
+  background:linear-gradient(145deg,rgba(39,111,191,.10),rgba(113,50,71,.10));
+  border-color:rgba(39,111,191,.34);
+  box-shadow:inset 0 0 20px rgba(217,160,102,.12),0 8px 26px rgba(39,111,191,.12);
+}
+body:not(.dark-mode) .brand-mark:before{border-color:rgba(201,134,69,.35);border-left-color:var(--sand);border-top-color:var(--accent)}
+body:not(.dark-mode) .brand-mark:after{border-color:rgba(113,50,71,.18)}
+body:not(.dark-mode) .km-logo{
+  background:linear-gradient(135deg,#713247 0%,#C98645 48%,#276FBF 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  text-shadow:0 0 18px rgba(39,111,191,.10);
+}
+body:not(.dark-mode) .km-spark{background:var(--sand);box-shadow:0 0 12px rgba(201,134,69,.60)}
+
+body:not(.dark-mode) .orb-a{opacity:.28}
+body:not(.dark-mode) .orb-b{opacity:.20}
+
+body:not(.dark-mode) .hero-console,
+body:not(.dark-mode) .glass,
+body:not(.dark-mode) .contact-card,
+body:not(.dark-mode) .skill-card,
+body:not(.dark-mode) .project-card,
+body:not(.dark-mode) .cert-card,
+body:not(.dark-mode) .career-command-v7,
+body:not(.dark-mode) .forum-callout{
+  background:linear-gradient(145deg,rgba(255,255,255,.94),rgba(237,243,247,.91));
+  border-color:rgba(18,59,82,.14);
+  box-shadow:var(--shadow);
+}
+body:not(.dark-mode) .hero-console:after,
+body:not(.dark-mode) .glass:after,
+body:not(.dark-mode) .skill-card:after,
+body:not(.dark-mode) .project-card:after,
+body:not(.dark-mode) .cert-card:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  pointer-events:none;
+  background:linear-gradient(110deg,transparent 25%,rgba(255,255,255,.56) 46%,transparent 65%);
+  transform:translateX(-120%);
+  animation:v8LightSweep 8s ease-in-out infinite;
+}
+.hero-console,.glass,.skill-card,.project-card,.cert-card{position:relative;overflow:hidden}
+@keyframes v8LightSweep{0%,48%{transform:translateX(-120%)}70%,100%{transform:translateX(120%)}}
+
+body:not(.dark-mode) .hero-console{background:linear-gradient(145deg,rgba(255,255,255,.96),rgba(239,244,247,.94));}
+body:not(.dark-mode) .console-top{border-bottom-color:rgba(18,59,82,.12);color:#62737E}
+body:not(.dark-mode) .console-top b{color:var(--accent)}
+body:not(.dark-mode) .console-lines p{color:#435965;border-bottom-color:rgba(18,59,82,.10)}
+body:not(.dark-mode) .console-lines p span{color:#8A6B76}
+body:not(.dark-mode) .console-lines b{color:var(--good)}
+
+body:not(.dark-mode) .radar{
+  border-color:rgba(39,111,191,.28);
+  background:radial-gradient(circle,rgba(39,111,191,.09),transparent 64%);
+}
+body:not(.dark-mode) .radar:before,
+body:not(.dark-mode) .radar:after,
+body:not(.dark-mode) .radar-ring{border-color:rgba(39,111,191,.13)}
+body:not(.dark-mode) .radar-sweep{background:linear-gradient(90deg,rgba(39,111,191,.75),rgba(39,111,191,0))}
+
+/* New KM emblem: replaces the old crosshair/falcon-style visual. */
+.km-radar-emblem{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:48px;height:48px;display:grid;place-items:center;
+  border:1px solid rgba(39,111,191,.45);
+  border-radius:15px;
+  background:linear-gradient(145deg,rgba(113,50,71,.10),rgba(39,111,191,.12));
+  box-shadow:0 0 0 7px rgba(39,111,191,.035),0 0 28px rgba(39,111,191,.16);
+  animation:v8KmCore 3.4s ease-in-out infinite;
+  z-index:4;
+}
+.km-radar-emblem:before{content:"";position:absolute;inset:-7px;border:1px dashed rgba(201,134,69,.42);border-radius:19px;animation:v8Spin 8s linear infinite}
+.km-radar-emblem:after{content:"";position:absolute;inset:7px;border:1px solid rgba(113,50,71,.20);border-radius:11px}
+.km-radar-emblem b{font-family:"Space Grotesk";font-size:18px;letter-spacing:-.08em;background:linear-gradient(135deg,#713247,#C98645,#276FBF);-webkit-background-clip:text;background-clip:text;color:transparent;z-index:2}
+.km-radar-emblem i{position:absolute;width:5px;height:5px;border-radius:50%;background:var(--red);right:3px;top:3px;box-shadow:0 0 10px rgba(217,54,91,.75);animation:v8AlertBlink 1.4s ease-in-out infinite}
+@keyframes v8KmCore{50%{transform:translate(-50%,-50%) scale(1.08);box-shadow:0 0 0 10px rgba(39,111,191,.03),0 0 38px rgba(201,134,69,.18)}}
+@keyframes v8Spin{to{transform:rotate(360deg)}}
+@keyframes v8AlertBlink{50%{opacity:.25;transform:scale(.6)}}
+
+body:not(.dark-mode) .primary{background:linear-gradient(135deg,#C98645,#A65C76);color:#fff;box-shadow:0 13px 30px rgba(113,50,71,.16)}
+body:not(.dark-mode) .primary:hover{background:linear-gradient(135deg,#D9A066,#713247)}
+body:not(.dark-mode) .secondary,
+body:not(.dark-mode) .ghost{border-color:rgba(39,111,191,.20);background:rgba(255,255,255,.55);color:var(--text)}
+body:not(.dark-mode) .secondary:hover,
+body:not(.dark-mode) .ghost:hover{border-color:rgba(201,134,69,.45)}
+body:not(.dark-mode) .hero-kicker{color:#60727D}
+body:not(.dark-mode) h1 span{color:#276FBF;text-shadow:0 0 32px rgba(85,184,232,.18)}
+body:not(.dark-mode) .hero-lead{color:#536773}
+body:not(.dark-mode) .hero-meta{color:#667984}
+body:not(.dark-mode) .hero-meta i{color:#C98645}
+body:not(.dark-mode) .eyebrow,.forum-kicker{color:#276FBF;border-color:rgba(39,111,191,.16);background:rgba(39,111,191,.035)}
+body:not(.dark-mode) .section-heading small{color:#276FBF}
+body:not(.dark-mode) .section-heading h2{color:#17303F}
+body:not(.dark-mode) .signal-list>div{background:rgba(255,255,255,.64);border-color:rgba(18,59,82,.11)}
+body:not(.dark-mode) .signal-list i{color:#276FBF}
+body:not(.dark-mode) .timeline article{background:rgba(255,255,255,.68);border-color:rgba(18,59,82,.12)}
+body:not(.dark-mode) .timeline-dot{background:#C98645;box-shadow:0 0 18px rgba(201,134,69,.35)}
+body:not(.dark-mode) .timeline article:nth-child(2) .timeline-dot{background:#A65C76}
+body:not(.dark-mode) .timeline article:nth-child(3) .timeline-dot{background:#276FBF}
+body:not(.dark-mode) .tags span{color:#5D6F7A;border-color:rgba(18,59,82,.12)}
+body:not(.dark-mode) .skill-card:hover,
+body:not(.dark-mode) .project-card:hover,
+body:not(.dark-mode) .cert-card:hover{border-color:rgba(201,134,69,.45);box-shadow:0 25px 60px rgba(39,111,191,.14)}
+body:not(.dark-mode) .skill-card i,.project-icon{color:#276FBF}
+body:not(.dark-mode) .project-icon{background:rgba(39,111,191,.07);border-color:rgba(39,111,191,.16)}
+body:not(.dark-mode) .cert-icon{background:radial-gradient(circle,rgba(85,184,232,.13),rgba(113,50,71,.08) 55%,transparent 72%);border-color:rgba(39,111,191,.20)}
+body:not(.dark-mode) .cert-icon:before{border-top-color:#276FBF;border-right-color:#C98645}
+body:not(.dark-mode) .cert-orbit{background:#C98645;box-shadow:0 0 12px rgba(201,134,69,.55)}
+body:not(.dark-mode) .stats article{background:rgba(255,255,255,.72);border-color:rgba(18,59,82,.12)}
+body:not(.dark-mode) .stats strong{color:#713247}
+body:not(.dark-mode) .stats span{color:#60727D}
+body:not(.dark-mode) .telemetry{background:rgba(255,255,255,.56);border-color:rgba(18,59,82,.10)}
+body:not(.dark-mode) .telemetry-head{color:#506572}
+body:not(.dark-mode) .telemetry-head span,.telemetry-grid b{color:#713247}
+body:not(.dark-mode) .bar{background:rgba(18,59,82,.08)}
+body:not(.dark-mode) .bar i{background:linear-gradient(90deg,#276FBF,#55B8E8,#C98645)}
+
+/* New learning cards */
+.learning-card{position:relative}
+.learning-card:before{content:"LEARNING";position:absolute;top:12px;right:13px;padding:4px 7px;border-radius:99px;background:rgba(39,111,191,.07);border:1px solid rgba(39,111,191,.14);color:#276FBF;font-size:6px;font-weight:900;letter-spacing:.12em}
+.learning-card h3{font-size:18px}
+.learning-card .cert-icon{animation:v8CertFloat 4.5s ease-in-out infinite}
+@keyframes v8CertFloat{50%{transform:translateY(-5px) rotate(2deg);box-shadow:0 15px 30px rgba(39,111,191,.12)}}
+
+/* Extra motion: KM Control Guardian flight path */
+.km-control-flight{position:absolute;right:18px;bottom:10px;width:245px;height:42px;pointer-events:none;overflow:visible;opacity:.85}
+.flight-km{position:absolute;left:0;top:7px;width:30px;height:30px;border-radius:10px;display:grid;place-items:center;font:900 9px "Space Grotesk";color:#fff;background:linear-gradient(135deg,#713247,#C98645,#276FBF);box-shadow:0 0 18px rgba(39,111,191,.22);animation:v8GuardianFlight 6s ease-in-out infinite}
+.flight-trail{position:absolute;left:14px;right:24px;top:21px;height:1px;background:linear-gradient(90deg,transparent,#55B8E8,#C98645,#A65C76,transparent);opacity:.45}
+.flight-dot{position:absolute;width:5px;height:5px;border-radius:50%;background:#276FBF;box-shadow:0 0 10px rgba(39,111,191,.55);animation:v8DotFlight 3.2s linear infinite}
+.flight-dot.d1{left:33%;top:8px}.flight-dot.d2{left:59%;top:30px;animation-delay:.8s;background:#C98645}.flight-dot.d3{left:82%;top:13px;animation-delay:1.6s;background:#A65C76}
+.flight-caption{position:absolute;right:0;bottom:-2px;font-size:6px;letter-spacing:.16em;font-weight:900;color:#71818A}
+@keyframes v8GuardianFlight{0%,100%{transform:translate(0,0) rotate(-5deg)}25%{transform:translate(62px,-7px) rotate(4deg)}52%{transform:translate(126px,4px) rotate(-3deg)}78%{transform:translate(188px,-5px) rotate(5deg)}95%{transform:translate(215px,0) rotate(0)}}
+@keyframes v8DotFlight{0%{transform:translateX(-20px);opacity:0}20%{opacity:1}100%{transform:translateX(70px);opacity:0}}
+
+/* Extra motion: animated section signal lines */
+.section-heading{position:relative}
+.section-heading:after{content:"";display:block;width:96px;height:2px;margin-top:-17px;margin-bottom:25px;border-radius:99px;background:linear-gradient(90deg,#713247,#C98645,#276FBF,transparent);transform-origin:left;animation:v8SectionLine 4.8s ease-in-out infinite}
+@keyframes v8SectionLine{0%,100%{transform:scaleX(.45);opacity:.45}50%{transform:scaleX(1.2);opacity:1}}
+
+/* Extra motion: cards get a soft breathing highlight */
+body:not(.dark-mode) .skill-card,.project-card,.cert-card{animation:v8CardBreath 7s ease-in-out infinite}
+body:not(.dark-mode) .skill-card:nth-child(2n),body:not(.dark-mode) .project-card:nth-child(2n),body:not(.dark-mode) .cert-card:nth-child(2n){animation-delay:1.2s}
+@keyframes v8CardBreath{50%{box-shadow:0 25px 65px rgba(39,111,191,.12)}}
+
+/* Career Hub gets light glass + copper pulse */
+body:not(.dark-mode) .career-command-v7{background:linear-gradient(145deg,rgba(255,255,255,.95),rgba(233,242,247,.92))}
+body:not(.dark-mode) .career-core-v7{background:radial-gradient(circle,rgba(85,184,232,.22),rgba(113,50,71,.16) 60%,rgba(255,255,255,.96));border-color:rgba(201,134,69,.48);box-shadow:0 0 55px rgba(201,134,69,.16),inset 0 0 28px rgba(39,111,191,.08)}
+body:not(.dark-mode) .career-node-v7{background:rgba(255,255,255,.94);border-color:rgba(39,111,191,.24);box-shadow:0 12px 30px rgba(39,111,191,.10)}
+body:not(.dark-mode) .career-node-v7 i{color:#276FBF}
+body:not(.dark-mode) .career-node-v7 b{color:#713247}
+body:not(.dark-mode) .career-copy-v7 h3{color:#17303F}
+body:not(.dark-mode) .career-copy-v7 p{color:#5B6C77}
+body:not(.dark-mode) .career-chip-v7{color:#713247;background:rgba(201,134,69,.07);border-color:rgba(201,134,69,.22)}
+body:not(.dark-mode) .career-metrics-v7 span{background:rgba(255,255,255,.60);border-color:rgba(39,111,191,.13)}
+
+/* Contact: GitHub/Discussions links are removed in V8. */
+body:not(.dark-mode) .connect-status{color:#4F6570}
+body:not(.dark-mode) .connect-badge{display:inline-flex;align-items:center;padding:4px 7px;border-radius:99px;border:1px solid rgba(201,134,69,.18);color:#A46D35;font-size:6px;letter-spacing:.10em;background:rgba(201,134,69,.06)}
+
+/* V8 dark mode: theme toggle now switches to an optional dark executive mode. */
+body.dark-mode{
+  --bg:#08131D;--bg-deep:#050A10;--panel:rgba(14,28,40,.84);--panel-2:rgba(24,39,52,.92);
+  --line:rgba(217,160,102,.20);--text:#F5F1EC;--muted:#C8C0B8;--accent:#5FA9D4;--accent-2:#8AC8EA;
+  --sand:#D9A066;--sand-soft:#E0CDB9;
+  background:radial-gradient(circle at 10% 12%,rgba(113,50,71,.34),transparent 25%),radial-gradient(circle at 88% 14%,rgba(95,169,212,.18),transparent 25%),linear-gradient(135deg,#050A10,#08131D 55%,#111A22);
+}
+body.dark-mode .site-header{background:rgba(5,10,16,.80)}
+body.dark-mode .hero-console,body.dark-mode .glass,body.dark-mode .contact-card,body.dark-mode .skill-card,body.dark-mode .project-card,body.dark-mode .cert-card,body.dark-mode .career-command-v7{background:linear-gradient(145deg,rgba(18,31,42,.90),rgba(71,32,50,.76))}
+body.dark-mode .secondary,body.dark-mode .ghost{background:rgba(255,255,255,.035);color:var(--text)}
+body.dark-mode .section-heading h2{color:var(--text)}
+body.dark-mode .stats article{background:rgba(255,255,255,.025)}
+body.dark-mode .km-logo{background:linear-gradient(135deg,#E0CDB9,#D9A066,#8AC8EA);-webkit-background-clip:text;background-clip:text;color:transparent}
+body.dark-mode .learning-card:before{color:#8AC8EA;background:rgba(95,169,212,.08);border-color:rgba(95,169,212,.16)}
+
+@media(max-width:650px){
+  .km-control-flight{right:8px;left:8px;width:calc(100% - 16px);transform:scale(.92);transform-origin:right bottom}
+  .section-heading:after{margin-top:-13px}
+}
+@media(prefers-reduced-motion:reduce){
+  .km-radar-emblem,.km-radar-emblem:before,.km-radar-emblem i,.km-control-flight,.flight-km,.flight-dot,.section-heading:after,.learning-card,.skill-card,.project-card,.cert-card,.hero-console:after,.glass:after,.skill-card:after,.project-card:after,.cert-card:after{animation:none!important}
+}
+
+.v8-spotlight{border-color:rgba(201,134,69,.62)!important;box-shadow:0 24px 70px rgba(201,134,69,.16)!important}
+.hero-console{transform:translate3d(var(--v8-mx,0),var(--v8-my,0),0);transition:transform .18s ease-out}
+.v8-career-arrived .career-core-v7{animation:v8CareerArrival 1.2s ease both,v7CorePulse 3.4s ease-in-out infinite 1.2s}
+@keyframes v8CareerArrival{0%{transform:scale(.7);opacity:.2}60%{transform:scale(1.13);opacity:1}100%{transform:scale(1)}}
