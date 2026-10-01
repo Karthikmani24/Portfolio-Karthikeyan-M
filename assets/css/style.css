@@ -1343,3 +1343,407 @@ body:not(.dark-mode) .forum-callout{
 @media(max-width:900px){.project-grid-rich{grid-template-columns:1fr}}
 @media(max-width:600px){.recruiter-tabs{grid-template-columns:1fr}.recruiter-tab{min-height:68px}.project-visual,.project-visual img{height:165px;min-height:165px}}
 @media(prefers-reduced-motion:reduce){.project-visual img,.project-scan,.recruiter-signal-line span,.recruiter-preview:before,.recruiter-preview:after{animation:none!important}}
+
+
+/* ============================================================
+   V8.1 — PROJECT FOCUS + RECRUITER NETWORK REFINEMENT
+   Reference baseline: V7 visual hierarchy, upgraded V8 content.
+   ============================================================ */
+
+/* Slightly darker light executive background */
+body:not(.dark-mode){
+  background:
+    radial-gradient(circle at 8% 8%,rgba(113,50,71,.19),transparent 24%),
+    radial-gradient(circle at 91% 10%,rgba(39,111,191,.18),transparent 27%),
+    radial-gradient(circle at 52% 92%,rgba(201,134,69,.14),transparent 30%),
+    linear-gradient(135deg,#BFCFD8 0%,#CDD9DF 46%,#E3E9EC 100%);
+  color:#172B38;
+}
+
+body:not(.dark-mode) .site-header{
+  background:rgba(205,217,223,.90);
+  border-bottom-color:rgba(18,59,82,.18);
+  box-shadow:0 10px 35px rgba(18,59,82,.08);
+}
+
+body:not(.dark-mode) .hero-console,
+body:not(.dark-mode) .glass,
+body:not(.dark-mode) .contact-card,
+body:not(.dark-mode) .skill-card,
+body:not(.dark-mode) .project-card,
+body:not(.dark-mode) .cert-card,
+body:not(.dark-mode) .career-command-v7,
+body:not(.dark-mode) .forum-callout{
+  background:linear-gradient(145deg,rgba(248,251,252,.95),rgba(218,229,235,.94));
+  border-color:rgba(18,59,82,.15);
+}
+
+/* Project section — strong visual hierarchy */
+.project-section-heading{
+  position:relative;
+  padding:24px 26px 20px;
+  margin-bottom:20px;
+  border-radius:24px;
+  background:
+    linear-gradient(120deg,rgba(255,255,255,.76),rgba(228,237,241,.66)),
+    radial-gradient(circle at 90% 10%,rgba(201,134,69,.14),transparent 30%);
+  border:1px solid rgba(18,59,82,.15);
+  box-shadow:0 18px 45px rgba(18,59,82,.09);
+  overflow:hidden;
+}
+
+.project-section-heading:before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  width:5px;
+  height:100%;
+  background:linear-gradient(180deg,var(--burgundy),var(--sand),var(--accent));
+  animation:projectAccentPulse 3.5s ease-in-out infinite;
+}
+
+.project-section-heading:after{
+  content:"";
+  position:absolute;
+  right:-90px;
+  top:-90px;
+  width:190px;
+  height:190px;
+  border-radius:50%;
+  border:1px dashed rgba(39,111,191,.20);
+  animation:projectOrbit 12s linear infinite;
+}
+
+.project-kicker{
+  position:relative;
+  z-index:2;
+  display:flex;
+  align-items:center;
+  gap:9px;
+  color:#713247;
+  font-size:9px;
+  font-weight:950;
+  letter-spacing:.17em;
+}
+
+.kicker-dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:var(--accent);
+  box-shadow:0 0 0 5px rgba(39,111,191,.08),0 0 18px rgba(39,111,191,.45);
+  animation:kickerPulse 2s ease-in-out infinite;
+}
+
+.kicker-status{
+  margin-left:auto;
+  padding:6px 9px;
+  border:1px solid rgba(39,111,191,.22);
+  border-radius:999px;
+  color:var(--accent);
+  background:rgba(39,111,191,.06);
+  font-size:7px;
+  letter-spacing:.14em;
+}
+
+.project-section-heading h2{
+  position:relative;
+  z-index:2;
+  color:#172B38 !important;
+  font-weight:900;
+  margin:10px 0 7px;
+  max-width:1000px;
+  text-shadow:0 1px 0 rgba(255,255,255,.6);
+}
+
+.section-lead{
+  position:relative;
+  z-index:2;
+  max-width:900px;
+  color:#425764;
+  font-size:12px;
+  line-height:1.7;
+  margin:0;
+}
+
+.section-lead b{color:#713247}
+
+.project-focus-rail{
+  position:relative;
+  z-index:2;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-top:18px;
+  padding-top:15px;
+  border-top:1px solid rgba(18,59,82,.10);
+}
+
+.project-focus-rail span{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  padding:8px 10px;
+  border-radius:12px;
+  color:#213C4B;
+  background:rgba(255,255,255,.52);
+  border:1px solid rgba(18,59,82,.10);
+  font-size:8px;
+  letter-spacing:.10em;
+  transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;
+}
+
+.project-focus-rail span:hover{
+  transform:translateY(-4px);
+  border-color:rgba(39,111,191,.30);
+  box-shadow:0 10px 25px rgba(39,111,191,.10);
+}
+
+.project-focus-rail span i{color:var(--accent)}
+.project-focus-rail span:nth-of-type(2) i{color:var(--burgundy)}
+.project-focus-rail span:nth-of-type(3) i{color:var(--sand)}
+.project-focus-rail span:nth-of-type(4) i{color:#16865C}
+
+.rail-arrow{
+  color:#7A8B95;
+  font-size:9px;
+  animation:railArrow 1.8s ease-in-out infinite;
+}
+
+.project-grid-rich{
+  position:relative;
+  z-index:2;
+  gap:18px;
+}
+
+.project-rich-card{
+  min-height:100%;
+  border-radius:24px;
+  border:1px solid rgba(18,59,82,.14);
+  box-shadow:0 18px 42px rgba(18,59,82,.09);
+  transform:translateY(0);
+  transition:transform .4s cubic-bezier(.2,.75,.2,1),box-shadow .4s ease,border-color .4s ease;
+}
+
+.project-rich-card:hover{
+  transform:translateY(-9px);
+  border-color:rgba(39,111,191,.28);
+  box-shadow:0 28px 60px rgba(18,59,82,.15);
+}
+
+.project-visual{
+  min-height:205px;
+  background:
+    linear-gradient(135deg,rgba(39,111,191,.08),rgba(113,50,71,.06)),
+    rgba(255,255,255,.35);
+}
+
+.project-visual img{
+  height:205px;
+  animation:projectFloat 5.2s ease-in-out infinite;
+}
+
+.project-rich-card:nth-child(2) .project-visual img{animation-delay:.35s}
+.project-rich-card:nth-child(3) .project-visual img{animation-delay:.7s}
+.project-rich-card:nth-child(4) .project-visual img{animation-delay:1.05s}
+.project-rich-card:nth-child(5) .project-visual img{animation-delay:1.4s}
+.project-rich-card:nth-child(6) .project-visual img{animation-delay:1.75s}
+
+.project-copy{
+  padding:23px 24px 25px;
+}
+
+.project-copy > span{
+  display:inline-flex;
+  padding:5px 8px;
+  border-radius:8px;
+  background:rgba(39,111,191,.07);
+  border:1px solid rgba(39,111,191,.12);
+  color:#276FBF;
+  font-size:7.5px;
+  letter-spacing:.16em;
+}
+
+.project-copy h3{
+  color:#172B38;
+  font-size:20px;
+  margin:10px 0 7px;
+}
+
+.project-copy > p{
+  color:#526572;
+  font-size:11.5px;
+  line-height:1.65;
+}
+
+.project-points{
+  margin-top:17px;
+  gap:8px;
+}
+
+.project-points li{
+  position:relative;
+  padding:11px 12px;
+  background:rgba(247,250,251,.72);
+  border:1px solid rgba(18,59,82,.09);
+  transition:transform .3s ease,background .3s ease,border-color .3s ease;
+}
+
+.project-points li:before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:10px;
+  bottom:10px;
+  width:2px;
+  border-radius:2px;
+  background:linear-gradient(180deg,var(--accent),var(--burgundy));
+  opacity:.65;
+}
+
+.project-points li:hover{
+  transform:translateX(7px);
+  background:#fff;
+  border-color:rgba(39,111,191,.25);
+}
+
+.project-points li > i{
+  color:var(--accent);
+}
+
+.project-points b{
+  color:#213C4B;
+  font-size:9.5px;
+  letter-spacing:.01em;
+}
+
+.project-points span{
+  color:#5A6B75;
+  font-size:9.5px;
+  line-height:1.55;
+}
+
+@keyframes projectAccentPulse{
+  0%,100%{opacity:.7}
+  50%{opacity:1;filter:brightness(1.25)}
+}
+@keyframes projectOrbit{to{transform:rotate(360deg)}}
+@keyframes kickerPulse{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.35);box-shadow:0 0 0 8px rgba(39,111,191,.05),0 0 24px rgba(39,111,191,.50)}
+}
+@keyframes railArrow{
+  0%,100%{transform:translateX(0);opacity:.45}
+  50%{transform:translateX(5px);opacity:1}
+}
+
+/* Recruiter network is intentionally separate and below the profile tabs */
+.recruiter-network-active{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  margin:17px auto 0;
+  width:max-content;
+  max-width:100%;
+  padding:8px 13px;
+  border:1px solid rgba(22,134,92,.22);
+  border-radius:999px;
+  background:rgba(22,134,92,.055);
+  color:#167A58;
+  box-shadow:0 10px 25px rgba(22,134,92,.06);
+  overflow:hidden;
+}
+
+.recruiter-network-active:before{
+  content:"";
+  position:absolute;
+  left:-70%;
+  top:0;
+  width:45%;
+  height:100%;
+  background:linear-gradient(90deg,transparent,rgba(22,134,92,.18),transparent);
+  transform:skewX(-18deg);
+  animation:networkSweep 3.8s ease-in-out infinite;
+}
+
+.recruiter-network-active .network-pulse{
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:#16865C;
+  box-shadow:0 0 0 0 rgba(22,134,92,.45);
+  animation:networkPulse 1.8s ease-out infinite;
+}
+
+.recruiter-network-active i{
+  font-size:10px;
+}
+
+.recruiter-network-active b{
+  font-size:8px;
+  letter-spacing:.13em;
+}
+
+.recruiter-network-active small{
+  color:#59706A;
+  font-size:7px;
+  letter-spacing:.08em;
+}
+
+.network-line{
+  width:28px;
+  height:1px;
+  background:linear-gradient(90deg,#16865C,transparent);
+}
+
+@keyframes networkSweep{
+  0%,35%{left:-70%;opacity:0}
+  50%{opacity:1}
+  90%,100%{left:130%;opacity:0}
+}
+@keyframes networkPulse{
+  70%{box-shadow:0 0 0 8px rgba(22,134,92,0)}
+  100%{box-shadow:0 0 0 0 rgba(22,134,92,0)}
+}
+
+/* Keep the V7 career hierarchy but make the light version more readable */
+body:not(.dark-mode) .career-command-v7{
+  background:
+    radial-gradient(circle at 15% 15%,rgba(39,111,191,.12),transparent 28%),
+    linear-gradient(145deg,rgba(241,247,249,.97),rgba(218,227,232,.96));
+  border-color:rgba(18,59,82,.15);
+}
+
+body:not(.dark-mode) .career-copy-v7 h3{
+  color:#172B38;
+}
+
+body:not(.dark-mode) .career-copy-v7 p{
+  color:#526572;
+}
+
+@media(max-width:900px){
+  .project-focus-rail{flex-wrap:wrap}
+  .project-focus-rail .rail-arrow{display:none}
+}
+
+@media(max-width:600px){
+  .project-section-heading{padding:20px 18px}
+  .project-kicker{flex-wrap:wrap}
+  .kicker-status{margin-left:0}
+  .project-focus-rail{display:grid;grid-template-columns:1fr 1fr}
+  .project-focus-rail span{justify-content:center}
+  .recruiter-network-active{width:100%;justify-content:center}
+  .recruiter-network-active small{display:none}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .project-section-heading:after,.kicker-dot,.rail-arrow,.project-rich-card,.project-visual img,
+  .recruiter-network-active:before,.recruiter-network-active .network-pulse{
+    animation:none!important;
+    transition:none!important;
+  }
+}
